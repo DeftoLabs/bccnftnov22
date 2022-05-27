@@ -70,13 +70,15 @@ export const presaleMint = async (mintAmount) => {
     'latest'
   )
 
-  // Set up our Ethereum transaction
+  // Set up our Ethereum ------ PRESALE MINT ------transaction
   const tx = {
     to: config.contractAddress,
     from: window.ethereum.selectedAddress,
     value: parseInt(
       web3.utils.toWei(String(config.price * mintAmount), 'ether')
     ).toString(16), // hex
+    gas: '30000',
+    maxPriorityFeePerGas: '1000000108',
     data: nftContract.methods
       .presaleMint(window.ethereum.selectedAddress, mintAmount, proof)
       .encodeABI(),
@@ -119,14 +121,17 @@ export const publicMint = async (mintAmount) => {
     'latest'
   )
 
-  // Set up our Ethereum transaction
+  // Set up our Ethereum ------ PUBLIC SALE ---------transaction
   const tx = {
     to: config.contractAddress,
     from: window.ethereum.selectedAddress,
     value: parseInt(
       web3.utils.toWei(String(config.price * mintAmount), 'ether')
     ).toString(16), // hex
-    data: nftContract.methods.publicSaleMint(mintAmount).encodeABI(),
+    gas: '30000',
+    maxPriorityFeePerGas: '1000000108',
+    data: nftContract.methods
+    .publicSaleMint(mintAmount).encodeABI(),
     nonce: nonce.toString(16)
   }
 

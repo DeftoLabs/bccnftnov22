@@ -23,7 +23,7 @@ const initOnboard = init({
        id: '0x1',
        token: 'ETH',
        label: 'Ethereum Mainnet',
-       rpcUrl: 'https://mainnet.infura.io/v3/ababf9851fd845d0a167825f97eeb12b'
+       rpcUrl: 'https://mainnet.infura.io/v3/90344bc0425947ef8d401756c5b88538'
      },
     // {
     //   id: '0x3',
