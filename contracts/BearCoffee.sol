@@ -28,7 +28,7 @@ contract BearCoffee is
     uint256 public maxSupply = 10100;
 
     string public baseURI; 
-    string public notRevealedUri = "ipfs://Qmdt4qNU8QCSodpTw4XSBB6sroQ9uc9gFDU6MH5SHR3LZV/BCCNFT.png";
+    string public notRevealedUri = "ipfs://QmSJEZoJffDxPAjW4gukUNQEdrrr2harWWhmHHbGGBLsfM/hidden.json";
     string public baseExtension = ".json";
 
     bool public paused = false;
@@ -36,17 +36,18 @@ contract BearCoffee is
     bool public presaleM = false;
     bool public publicM = false;
 
-    uint256 presaleAmountLimit = 3;
+    uint256 presaleAmountLimit = 10;
     mapping(address => uint256) public _presaleClaimed;
 
-    uint256 _price = 100000000000000000; // 0.10 ETH
+    uint256 _price = 40000000000000000; // 0.04 ETH
+
 
     Counters.Counter private _tokenIds;
 
     uint256[] private _teamShares = [30, 30, 40]; // 3 PEOPLE IN THE TEAM
     address[] private _team = [
-        0x1cf526669e3eD4a190f59f49B41a92dA4FEfD0F1, // Admin # 1 Account gets 30% of the total revenue
-        0x43230B3109d032530ae792BD19de999883326B51, // Admin # 2 Account gets 30% of the total revenue
+        0xBe87f5058fE5E090691eb2a449e813E417041920, // Admin # 1 Account gets 30% of the total revenue
+        0x8a08e405fbC2fEfDCf7D5BE3775B3D94bf8200F8, // Admin # 2 Account gets 30% of the total revenue
         0x10a0B7a26Ce95DF82EabD8330F0E7e6EE522CBbB // VIP Account gets 40% of the total revenue
     ];
 
@@ -63,6 +64,10 @@ contract BearCoffee is
 
     function setBaseURI(string memory _tokenBaseURI) public onlyOwner {
         baseURI = _tokenBaseURI;
+    }
+
+    function _setTokenPrice(uint256 _newprice) public onlyOwner {
+        _price = _newprice;
     }
 
     function _baseURI() internal view override returns (string memory) {

@@ -122,7 +122,8 @@ export const publicMint = async (mintAmount) => {
   // Set up our Ethereum ------ PUBLIC SALE ---------transaction
   const tx = {
     to: config.contractAddress,
-    from: window.ethereum.selectedAddress,
+    from: window.ethereum.selectedAddress,gas:
+    web3.utils.toHex('500000'), gaslimit: web3.utils.toHex(await web3.eth.getBlock("latest")),
     value: parseInt(
       web3.utils.toWei(String(config.price * mintAmount), 'ether')
     ).toString(16), // hex

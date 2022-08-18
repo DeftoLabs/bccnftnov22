@@ -9,7 +9,7 @@
  const keccak256 = require('keccak256')
  const whitelist = require('./whitelist.js')
  
- const BASE_URI = 'ipfs://QmeHu5eSmrQu7UByNe2EqsdHcHyvWiEqkANWtcC3s1Nzr2/'
+ const BASE_URI = 'ipfs://QmZUZsAWXG1M9FJdrtUasd7s3oF4YrLfAKMiAk33h48h4X/'
  const proxyRegistryAddressMainnet = '0xa5409ec958c83c3f309868babaca7c86dcb077c1'
  
  async function main() {
@@ -19,7 +19,7 @@
    const root = merkleTree.getRoot()
  
    await hre.run('verify:verify', {
-     address: '0xa3888dB57F246f0C414cc122269Bc994C32a1b9a', // Deployed contract address
+     address: '0xBA047AB242D3259F0c22Ea65E288094093C0da9e', // Deployed contract address
      constructorArguments: [BASE_URI, root, proxyRegistryAddressMainnet]
    })
  }

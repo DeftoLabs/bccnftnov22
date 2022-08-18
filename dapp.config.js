@@ -1,10 +1,10 @@
 const config = {
     title: 'Bear Coffee Club NFT Dapp',
     description: '',
-    contractAddress: '0xa3888dB57F246f0C414cc122269Bc994C32a1b9a',
+    contractAddress: '0xBA047AB242D3259F0c22Ea65E288094093C0da9e',
     maxMintAmount: 10,
-    presaleMaxMintAmount: 3,
-    price: 0.1
+    presaleMaxMintAmount: 10,
+    price: 0.04
   }
   
   export { config }

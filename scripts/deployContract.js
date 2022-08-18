@@ -8,7 +8,7 @@
  const keccak256 = require('keccak256')
  const whitelist = require('./whitelist.js')
  
- const BASE_URI = 'ipfs://QmPVezw2F3TJ4GjXRR246D64vk4WC1GCqob4c7eDEL8CQv/'
+ const BASE_URI = 'ipfs://QmZUZsAWXG1M9FJdrtUasd7s3oF4YrLfAKMiAk33h48h4X/'
  const proxyRegistryAddressMainnet = '0xa5409ec958c83c3f309868babaca7c86dcb077c1'
  
  async function main() {
