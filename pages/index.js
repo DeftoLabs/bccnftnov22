@@ -227,7 +227,7 @@ export default function Mint() {
                     <div className="flex items-center space-x-3">
                       <p>
                         {Number.parseFloat(config.price * mintAmount).toFixed(
-                          4
+                          4 // Update the price digits
                         )}{' '}
                         ETH
                       </p>{' '}
